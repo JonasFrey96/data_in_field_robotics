@@ -22,26 +22,45 @@
 
 
 
-<!-- Navbar -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- Navbar with subsections -->
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <div id="navbarMain" class="navbar-menu">
     <div class="navbar-start" style="flex-grow:1;justify-content:center;">
-      <a class="navbar-item" href="#">
-        <span class="icon"><i class="fas fa-home"></i></span>
-      </a>
+      <a class="navbar-item" href="#home">Home</a>
+      <a class="navbar-item" href="#speakers">Speakers</a>
+      <a class="navbar-item" href="#challenge">Challenge</a>
+      <a class="navbar-item" href="#cfp">Call for Papers</a>
+      <a class="navbar-item" href="#organizers">Organizers</a>
+      <a class="navbar-item" href="#sponsors">Sponsors</a>
     </div>
   </div>
 </nav>
+<script>
+// Bulma burger menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+  var burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  burgers.forEach(function (el) {
+    el.addEventListener('click', function () {
+      var target = el.dataset.target;
+      var $target = document.getElementById(target);
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+    });
+  });
+});
+</script>
 
 
 
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -100,7 +119,7 @@
 
 
 <!-- About Workshop -->
-<section class="section">
+<section class="section" id="speakers">
   <div class="container">
     <h2 class="title is-3 has-text-centered">About the Workshop</h2>
     <div class="content has-text-justified">
@@ -126,7 +145,7 @@ This workshop will bring together researchers from robotics, computer vision, an
 
 
 
-<section class="section">
+<section class="section" id="challenge">
   <div class="container">
     <h2 class="title is-3 has-text-centered">Speakers</h2>
     <div class="columns is-multiline">
@@ -434,7 +453,7 @@ This workshop will bring together researchers from robotics, computer vision, an
 
 
 
-<section class="section">
+<section class="section" id="cfp">
   <div class="container is-max-desktop">
 
     <div style="display: flex; align-items: center; justify-content: center; gap: 1.5em; margin-bottom: 1.5em;">
@@ -469,7 +488,7 @@ This workshop will bring together researchers from robotics, computer vision, an
 </section>
 
 
-<section class="section">
+<section class="section" id="organizers">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">GrandTour Innovation</h2>
     <div class="content has-text-justified">
@@ -492,7 +511,7 @@ This workshop will bring together researchers from robotics, computer vision, an
 
 
 
-<section class="section">
+<section class="section" id="sponsors">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Call for Papers</h2>
     <div class="content has-text-justified">
