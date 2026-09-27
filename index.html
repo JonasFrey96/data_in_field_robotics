@@ -367,6 +367,16 @@ document.addEventListener('DOMContentLoaded', function () {
         color: #7a7a7a;
       }
 
+      /* Untimed golden row; the id keeps it above Bulma's striping and the phone time-label style */
+      #program .program-table tr.program-highlight,
+      #program .program-table tr.program-highlight td {
+        background-color: #fdc526;
+        color: #363636;
+        font-size: 1em;
+        font-weight: 700;
+        text-align: center;
+      }
+
       /* Phones: stack time, session and details in each row instead of three squeezed columns */
       @media screen and (max-width: 768px) {
         .program-table thead {
@@ -475,6 +485,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <td>17:10–17:30</td>
             <td><strong>Best Student Poster, Best Student Presentation, and Challenge Awards</strong></td>
             <td>Awards and closing remarks</td>
+          </tr>
+          <tr class="program-highlight">
+            <td colspan="3">Workshop T-shirts, goodies and stickers</td>
           </tr>
           <tr>
             <td>17:30</td>
