@@ -155,3 +155,78 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.gt-logo-block {
+  margin-left: 7em;
+}
+
+.speaker-links {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.challenge-intro {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.challenge-intro-text {
+  flex: 0 1 80%;
+}
+
+.challenge-intro-logo {
+  flex: 0 1 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Phone layout (Bulma's mobile breakpoint); nothing here applies from 769px up */
+@media screen and (max-width: 768px) {
+  /* Justified text leaves large gaps between words on narrow screens */
+  .has-text-justified {
+    text-align: left !important;
+  }
+
+  /* Larger tap targets for the small pill buttons (Webpage, Google Scholar, Mail) */
+  .button.is-small {
+    font-size: 0.875rem;
+  }
+
+  /* ...and let the larger buttons wrap in narrow speaker cards */
+  .speaker-links {
+    flex-wrap: wrap;
+  }
+
+  /* Center the IROS and GrandTour logos when they wrap onto separate lines */
+  .header-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em 2em;
+  }
+
+  .gt-logo-block {
+    margin-left: 0;
+  }
+
+  /* Stack the challenge text under its logo instead of squeezing both into one row */
+  .challenge-intro {
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1.5em;
+  }
+
+  .challenge-intro-text {
+    flex: none;
+    align-self: stretch;
+  }
+
+  .challenge-intro-logo {
+    flex: none;
+    order: -1;
+    width: 100px;
+  }
+}

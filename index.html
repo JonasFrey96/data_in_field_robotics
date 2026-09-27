@@ -38,6 +38,7 @@
       <a class="navbar-item" href="#program">Program</a>
       <a class="navbar-item" href="#challenge">Challenge</a>
       <a class="navbar-item" href="#cfp">Call for Papers</a>
+      <a class="navbar-item" href="#accepted">Accepted</a>
       <a class="navbar-item" href="#awards">Awards</a>
       <a class="navbar-item" href="#support">Financial Support</a>
       <a class="navbar-item" href="#organizers">Organizers</a>
@@ -55,6 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var $target = document.getElementById(target);
       el.classList.toggle('is-active');
       $target.classList.toggle('is-active');
+    });
+  });
+  // Close the mobile menu once a section has been picked
+  document.querySelectorAll('#navbarMain .navbar-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      burgers.forEach(function (el) {
+        el.classList.remove('is-active');
+        document.getElementById(el.dataset.target).classList.remove('is-active');
+      });
     });
   });
 });
@@ -79,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="author-block"><sup>7</sup>HNU</span>
           </div>
           <p class="is-size-4 has-text-weight-semibold" style="margin-top:1.2em;">
-            Thursday, 1 October 2026 &middot; 1:30 PM &ndash; 5:30 PM &middot; Room 317/318 &middot; Half-Day Workshop
+            Thursday, 1 October 2026 &middot; 1:30 PM &ndash; 5:30 PM &middot; <a href="https://2026.ieee-iros.org/program/venue-map/?room=317%2F318" target="_blank" rel="noopener">Room 317/318</a> &middot; Half-Day Workshop
           </p>
         </div>
       </div>
@@ -89,11 +99,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   <!-- GrandTour Logo at the top -->
-  <div style="width:100%;text-align:center;margin-top:0em;margin-bottom:0em;">
+  <div class="header-logos" style="width:100%;text-align:center;margin-top:0em;margin-bottom:0em;">
     <img src="./static/images/iros.jpeg" alt="IROS Logo" style="max-height:160px;width:auto;height:80vw;">
 
 
-    <div style="display:inline-flex;flex-direction:column;align-items:center;margin-left:7em;">
+    <div class="gt-logo-block" style="display:inline-flex;flex-direction:column;align-items:center;">
       <img src="./static/images/gt_logo_finished_rev1.svg" alt="GrandTour Logo" style="max-height:160px;width:auto;height:80vw;">
       <a href="https://grand-tour.leggedrobotics.com/" target="_blank" rel="noopener" style="margin-top:0.4em;">
       GrandTour Website
@@ -178,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <h3 class="title is-5"><em>From Data to Poses Underwater</em></h3>
               <p><strong>Prof. James Richard Forbes</strong></p>
               <p>McGill University</p>
-                <span style="display: flex; gap: 0.5em; align-items: center;">
+                <span class="speaker-links">
                   <a href="https://jrforbes.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                   <a href="https://scholar.google.com/citations?user=PVJW68EAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
@@ -205,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <h3 class="title is-5"><em>Learning Navigation from World-Scale Street-View Platforms</em></h3>
               <p><strong>Dr. Cherie Ho</strong></p>
               <p>Stanford University</p>
-                <span style="display: flex; gap: 0.5em; align-items: center;">
+                <span class="speaker-links">
                   <a href="https://cherieho.com/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                   <a href="https://scholar.google.com/citations?user=j8lsq7sAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
@@ -232,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <h3 class="title is-5">Autonomous Robotic Missions in Complex Environments: The Future of Unmanned Systems</h3>
               <p><strong>Dr. Stuart Young</strong></p>
               <p>Field AI</p>
-                <span style="display: flex; gap: 0.5em; align-items: center;">
+                <span class="speaker-links">
                   <a href="https://fieldaifederal.com" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                 </span>
             </div>
@@ -252,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <h3 class="title is-5">Hiking the Alps</h3>
               <p><strong>Prof. Marco Hutter</strong></p>
               <p>ETH Zürich / RAI</p>
-                <span style="display: flex; gap: 0.5em; align-items: center;">
+                <span class="speaker-links">
                   <a href="https://rsl.ethz.ch/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                   <a href="https://scholar.google.com/citations?user=DO3quJYAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
@@ -279,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <h3 class="title is-5">Rising Star Talk: Frontiers in Robot Data: Examples from 4D Perception</h3>
               <p><strong>Prof. Lukas Rosenberger Schmid</strong></p>
               <p>University of Technology Nuremberg</p>
-                <span style="display: flex; gap: 0.5em; align-items: center;">
+                <span class="speaker-links">
                   <a href="https://schmluk.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                   <a href="https://scholar.google.com/citations?hl=de&user=r79fGI0AAAAJ&view_op=list_works" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
@@ -355,6 +365,40 @@ document.addEventListener('DOMContentLoaded', function () {
       .program-table tr.program-break td {
         font-size: 0.85em;
         color: #7a7a7a;
+      }
+
+      /* Phones: stack time, session and details in each row instead of three squeezed columns */
+      @media screen and (max-width: 768px) {
+        .program-table thead {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+        .program-table,
+        .program-table tbody,
+        .program-table tr,
+        .program-table td {
+          display: block;
+          width: 100%;
+        }
+        .program-table tr {
+          padding: 0.6em 0;
+          border-bottom: 1px solid #dbdbdb;
+        }
+        .program-table tr:last-child {
+          border-bottom: none;
+        }
+        .program-table td {
+          border: none;
+          padding: 0.1em 0.75rem;
+        }
+        .program-table td:first-child {
+          font-size: 0.875em;
+          font-weight: 600;
+          color: #7a7a7a;
+        }
       }
     </style>
     <div class="table-container">
@@ -452,13 +496,13 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2 class="title is-3" style="margin-bottom: 0;">COMFORT Challenge</h2>
     </div>
     <div class="content has-text-justified">
-      <div style="display: flex; align-items: center; gap: 2em;">
-        <div style="flex: 0 1 80%;">
+      <div class="challenge-intro">
+        <div class="challenge-intro-text">
           <p>
             We invite participants to push the boundaries of state estimation by submitting results on the <a href="https://grand-tour.leggedrobotics.com/dataset" target="_blank" rel="noopener">GrandTour Benchmark</a>. For full details on participation, submission guidelines, and evaluation criteria, please visit the <a href="https://www.codabench.org/competitions/17505/" target="_blank" rel="noopener">COMFORT Challenge website</a>.
           </p>
         </div>
-        <div style="flex: 0 1 15%; display: flex; justify-content: flex-end;">
+        <div class="challenge-intro-logo">
           <img src="./static/images/gt_logo_finished_rev1.svg" alt="GrandTour Logo" style="max-width:100%; width:100%; height:auto; min-width:60px;">
         </div>
       </div>
@@ -575,6 +619,102 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 
+<section class="section" id="accepted">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Accepted Submissions</h2>
+
+    <style>
+      #accepted .accepted-list li {
+        margin-bottom: 0.9em;
+      }
+
+      #accepted .accepted-authors {
+        color: #555;
+        font-size: 0.95em;
+      }
+    </style>
+
+    <div class="content">
+      <p class="has-text-centered">The following works were accepted to the workshop and will be presented during the poster session.</p>
+      <ol class="accepted-list">
+        <li>
+          <strong>Wild-World: Action-Conditioned RGB-D-Semantic World Modeling for Field Robotics</strong><br>
+          <span class="accepted-authors">Zihang Wang, Yuhang Chu, Wenkai Zhu, Huateng Wu, Shuyuan Li, Dong Kong</span>
+        </li>
+        <li>
+          <strong>ForEnt: A Multi-Modal Dataset for Characterizing Quadruped Robot Entrapments in Forest Environments</strong><br>
+          <span class="accepted-authors">Natapat Kirdwichai, Danesh Tarapore</span>
+        </li>
+        <li>
+          <strong>Do Airborne-Particle Filters Transfer? The LIAD Cross-Domain Benchmark</strong><br>
+          <span class="accepted-authors">Chethaka Jayasekaramudeli, Yangmengfei Xu, Yiheng Sun, Ying Tan, Denny Oetomo, Jonathan Eden</span>
+        </li>
+        <li>
+          <strong>evalio: Easy, Repeatable Evaluation of Lidar-Inertial Odometry</strong><br>
+          <span class="accepted-authors">Easton Potokar, Michael Kaess</span>
+        </li>
+        <li>
+          <strong>Gaussian Representation for 4D Radar-Inertial Odometry</strong><br>
+          <span class="accepted-authors">Fernando Amodeo, Luis Merino, Fernando Caballero</span>
+        </li>
+        <li>
+          <strong>Tiered-Resolution Volumetric Mapping for Real-Time Simultaneous Planning and Mapping on Natural Outdoor Environments</strong><br>
+          <span class="accepted-authors">Afonso Eloy Carvalho, David Portugal, Paulo Peixoto, George Kantor</span>
+        </li>
+        <li>
+          <strong>CLPV: Dataset of Controlled Co-Located Lighting and Photometric Variation for Robot Vision</strong><br>
+          <span class="accepted-authors">Shekoufeh Sadeghi, Yash Turkar, Karthik K Dantu</span>
+        </li>
+        <li>
+          <strong>G-EDF-Loc: 3D Continuous Gaussian Distance Field for Robust Gradient-Based 6DoF Localization</strong><br>
+          <span class="accepted-authors">José Enrique Maese, Lucía Coto-Elena, Luis Merino, Fernando Caballero</span>
+        </li>
+        <li>
+          <strong>Accelerating Robust State Estimation via Sparse Variable Projection</strong><br>
+          <span class="accepted-authors">Nikolas R. Sanderson, Alan Papalia</span>
+        </li>
+        <li>
+          <strong>FieldMatch: Which Feature Matcher Fits Your Field Robot?</strong><br>
+          <span class="accepted-authors">Hyunwoo Kim, Giseop Kim</span>
+        </li>
+        <li>
+          <strong>Boreas Road Trip: A Multi-Sensor Autonomous Driving Dataset on Challenging Roads</strong><br>
+          <span class="accepted-authors">Daniil Lisus, Katya M. Papais, Cedric Le Gentil, Elliot Preston-Krebs, Andrew Lambert, Keith Y.K. Leung, Timothy Barfoot</span>
+        </li>
+        <li>
+          <strong>TartanDrive 2.5: Scaling Full-Stack Data Across Modalities, Behaviors, and Extreme Environments</strong><br>
+          <span class="accepted-authors">Matthew Sivaprakasam, Micah Nye, Saksham Sharma, Geethika Hemkumar, Samuel Triest, Zhipeng Zhao, Yifei Liu, Parv Maheshwari, Sebastian Scherer, Wenshan Wang</span>
+        </li>
+        <li>
+          <strong>SLAMLab: Real-Time LiDAR-Inertial SLAM on the GrandTour COMFORT Benchmark</strong><br>
+          <span class="accepted-authors">Philipp Glira, Clemens Hofbauer, Kilian Potts, Phillipp Fanta-Jende</span>
+        </li>
+        <li>
+          <strong>Universal Navigation Interface: Robot-Free Data for Wheeled Robot Navigation</strong><br>
+          <span class="accepted-authors">Sarvesh Prajapati, Ananya Trivedi, Lorena Maria Genua, Drake Moore, Taskin Padir</span>
+        </li>
+        <li>
+          <strong>A Multimodal UAV Dataset for Adaptive Agricultural Sensing</strong><br>
+          <span class="accepted-authors">Charuvahan Adhivarahan, Jagadeswara PKV Pothuri, Karthik K Dantu</span>
+        </li>
+        <li>
+          <strong>Super Odometry 1.5: Hessian-Informed Factor Fusion Odometry for Field Robotics</strong><br>
+          <span class="accepted-authors">Tejas Salian, Eungchang Mason Lee, Mohammad Shaheer, T Karan Balakumar, Smrithi Siddagangaiah, Shibo Zhao</span>
+        </li>
+        <li>
+          <strong>MSO: Uncertainty-Aware Multi-Spectral Inertial Odometry for Extreme Environments</strong><br>
+          <span class="accepted-authors">Shibo Zhao, T Karan Balakumar, Avnish Patel, Parv Maheshwari, Tejas Salian, Andrew Jong, Mukai Yu, Wenshan Wang, Sebastian Scherer</span>
+        </li>
+        <li>
+          <strong>ForVis: An In-Field Dataset and Benchmark for VIO Using Under-Canopy UAV Flights in Forests</strong><br>
+          <span class="accepted-authors">Arman Kiani, Masoud Ataei, Elvis Gyaase, Jeffrey Eiyike, Aaron Weiskittel, Prabuddha Chakraborty, Vikas Dhiman</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="section" id="support">
   <div class="container is-max-desktop">
@@ -590,14 +730,8 @@ document.addEventListener('DOMContentLoaded', function () {
         contribution to the workshop (an accepted poster, paper, or challenge submission) and to attend in person.
       </p>
       <div class="has-text-centered" style="margin: 1.5em 0;">
-        <a href="https://forms.gle/imHwtXbMTLNBtwLf8" target="_blank" rel="noopener" class="button is-medium is-dark is-rounded">
-          <span class="icon"><i class="fas fa-file-signature"></i></span>
-          <span>Apply for Financial Support</span>
-        </a>
+        <p class="is-size-5 has-text-weight-semibold has-text-danger">The funds have been allocated. <span aria-hidden="true">🎉</span></p>
       </div>
-      <p class="is-size-7 has-text-centered">
-        <em>Application deadline and notification dates: TBD.</em>
-      </p>
     </div>
   </div>
 </section>
@@ -619,6 +753,22 @@ document.addEventListener('DOMContentLoaded', function () {
       #organizers .organizer-card figure {
         margin-left: auto;
         margin-right: auto;
+      }
+
+      /* Phones: Bulma columns only become flex from 769px, so center the cards here, two per row */
+      @media screen and (max-width: 768px) {
+        #organizers .organizer-grid {
+          display: flex;
+          justify-content: center;
+        }
+        #organizers .organizer-card {
+          flex: 0 0 50%;
+          max-width: 190px;
+          min-width: 0;
+        }
+        #organizers .organizer-card figure {
+          max-width: 100%;
+        }
       }
     </style>
 
@@ -737,6 +887,12 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       .sponsor-tier-label {
         margin-bottom: 0.75em !important;
+      }
+      /* Phones: logos wrap onto their own lines, so the side margin only pushes them off-center */
+      @media screen and (max-width: 768px) {
+        .sponsor-img {
+          margin-right: 0;
+        }
       }
     </style>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75em; margin-bottom: 2em;">
