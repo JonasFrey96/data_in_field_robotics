@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
               </figure>
             </div>
             <div class="column">
-              <h3 class="title is-5"><em>Learning Navigation from World-Scale Street-View Platforms</em></h3>
+              <h3 class="title is-5"><em>Harnessing Data in the Messy Real World: Organizing Robot Experience and Curating Data at Scale</em></h3>
               <p><strong>Dr. Cherie Ho</strong></p>
               <p>Stanford University</p>
                 <span class="speaker-links">
@@ -249,6 +249,34 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
       </div>
+
+      <!-- Speaker 4 -->
+      <div class="column is-half">
+        <div class="box">
+          <div class="columns is-vcentered">
+            <div class="column is-narrow">
+              <figure class="image is-128x128">
+                <img src="./static/images/Dr_Youming_Qin.png" alt="Dr. Youming Qin" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.1">
+              </figure>
+            </div>
+            <div class="column">
+              <h3 class="title is-5"><em>Industry Talk</em></h3>
+              <p><strong>Dr. Youming Qin</strong></p>
+              <p>CEO, Manifold Tech Limited</p>
+                <span class="speaker-links">
+                  <a href="https://www.3dmanifold.com/" target="_blank" rel="noopener" class="button is-small is-dark is-rounded mt-2">Webpage</a>
+                  <a href="https://scholar.google.com/scholar?q=Youming+Qin" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
+                  <span class="icon">
+                    <img src="./static/images/google-scholar.svg" alt="Google Scholar" style="height:2em;width:2em;">
+                  </span>
+                  <span>Google Scholar</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Speaker 5 -->
       <div class="column is-half">
         <div class="box">
@@ -307,32 +335,98 @@ document.addEventListener('DOMContentLoaded', function () {
     .speaker-crop {
       object-fit: cover;
       object-position: 50% 50%;
-      width: 120px;
-      height: 80px;
-      aspect-ratio: 1/1;
-      border-radius: 5px;
+      width: 100%;
+      height: 100%;
       transition: object-position 0.5s, transform 0.5s;
       background: #eee;
       display: block;
-      margin: 0 auto;
     }
 
-    #speakers .columns {
-      justify-content: center;
+    #speakers > .container > .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin: 0;
     }
 
-    #speakers .column.is-half {
-      max-width: 700px;
+    #speakers > .container > .columns > .column.is-half {
+      width: auto;
+      max-width: none;
+      padding: 0;
+      display: flex;
     }
 
     #speakers .box {
+      width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      padding: 1.25rem;
     }
 
-    #speakers .box .columns {
-      height: 100%;
+    #speakers .box > .columns {
+      display: grid;
+      grid-template-columns: 144px minmax(0, 1fr);
+      align-items: center;
+      gap: 1.25rem;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    #speakers .box > .columns > .column {
+      min-width: 0;
+      width: auto;
+      padding: 0;
+    }
+
+    #speakers .box > .columns > .column.is-narrow {
+      width: 144px;
+      flex: none;
+    }
+
+    #speakers .box .image.is-128x128 {
+      width: 144px;
+      height: 144px;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    #speakers .box .title {
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    #speakers .speaker-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    @media screen and (max-width: 768px) {
+      #speakers > .container > .columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+      }
+
+      #speakers .box {
+        padding: 1rem;
+      }
+
+      #speakers .box > .columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        text-align: center;
+      }
+
+      #speakers .box > .columns > .column.is-narrow {
+        margin: 0 auto;
+      }
+
+      #speakers .speaker-links {
+        justify-content: center;
+      }
     }
   </style>
   <script>
@@ -352,6 +446,171 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
+
+<section class="section" id="speaker-synopsis">
+  <div class="container is-max-desktop">
+    <div class="speaker-synopsis-toggle">
+      <button id="speaker-synopsis-toggle" class="button is-link is-light is-rounded" type="button" aria-expanded="false" aria-controls="speaker-synopses">
+        <span id="speaker-synopsis-toggle-label">Show Speaker Synopses</span>
+        <span class="icon synopsis-chevron" aria-hidden="true">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+    </div>
+
+    <div id="speaker-synopses" class="speaker-synopses" aria-hidden="true">
+      <div class="speaker-synopsis-list">
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">13:40–14:00 — Lukas Rosenberger Schmid</h3>
+          <p>Lukas Rosenberger Schmid is a tenure-track professor of machine intelligence at the University of Technology Nuremberg. He earned his PhD at ETH Zürich and subsequently worked as a postdoctoral fellow and research scientist in MIT’s SPARK Lab. His research focuses on robot perception and mapping in dynamic environments, including scene understanding, active perception and lifelong learning.</p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">14:00–14:20 — Cherie Ho</h3>
+          <p>Cherie Ho is a postdoctoral researcher at Stanford University, working with Professor Jeannette Bohg. Her research develops flexible and self-improving robots for messy, real-world environments. She studies how robots can build and use memory, predict and reason about consequences, and continually improve from their own experience, with applications in mobile manipulation and navigation. Cherie received her PhD in Robotics from Carnegie Mellon University, where she was advised by Professor Sebastian Scherer. She is a recipient of the Croucher Fellowship and has been recognized as a Robotics: Science and Systems (RSS) Pioneer and a Rising Star in Mechanical Engineering.</p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">14:40–15:00 — James Forbes</h3>
+          <p>James Forbes is a professor of mechanical engineering and William Dawson Scholar at McGill University, where he leads the DECAR laboratory. His research focuses on navigation and control, with applications spanning subsea inspection and mapping to multi-robot control. In addition, he serves as a Senior Editor of the <em>International Journal of Robotics Research</em>.</p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">15:00–15:20 — Dr. Youming Qin</h3>
+          <p>Dr. Youming Qin is the co-founder and CEO of Manifold Tech, a spatial-intelligence company developing hardware and platforms for large-scale 3D data capture and processing. The company’s technology is used for applications including robotics training, digital twins, industrial mapping and spatial AI. Dr. Qin co-founded Manifold Tech in 2022 and was named to the 2025 Forbes China 30 Under 30 list. <a href="https://www.3dmanifold.com/about/?utm_source=chatgpt.com" target="_blank" rel="noopener">Manifold Tech</a></p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">16:30–16:50 — Stuart Young</h3>
+          <p>Stuart Young is Senior Director at FieldAI Federal, specialising in autonomous systems for complex environments. He previously managed DARPA’s RACER program, advancing high-speed autonomous navigation in challenging off-road terrain. His research also addresses coordination among robot teams operating with limited sensing and unreliable communications.</p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">16:50–17:10 — Marco Hutter</h3>
+          <p>Marco Hutter is a Full Professor of Robotic Systems in the Department of Mechanical and Process Engineering at ETH Zürich and Director of the Center for Robotics. His research develops intelligent robotic systems for challenging environments, spanning legged locomotion, mobile manipulation, autonomous navigation, control and machine learning. He is also a co-founder of ETH spin-offs including ANYbotics and Gravis Robotics.</p>
+        </article>
+
+        <article class="speaker-synopsis-item">
+          <h3 class="title is-5">16:50–17:10 — Tobias Fischer</h3>
+          <p>Tobias Fischer is an Associate Professor and ARC Future Fellow at the Queensland University of Technology, and a Chief Investigator in its Centre for Robotics. His research focuses on robot localisation, visual place recognition and underwater perception. His doctoral thesis at Imperial College London received the UK Best PhD in Robotics Award.</p>
+        </article>
+      </div>
+    </div>
+
+    <style>
+      .speaker-synopsis-toggle {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+
+      .speaker-synopsis-toggle .button {
+        min-width: 220px;
+        transition: background-color 0.25s ease, color 0.25s ease;
+      }
+
+      .synopsis-chevron {
+        transition: transform 0.35s ease;
+      }
+
+      #speaker-synopsis-toggle[aria-expanded="true"] .synopsis-chevron {
+        transform: rotate(180deg);
+      }
+
+      .speaker-synopses {
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.45s ease, margin-top 0.45s ease, opacity 0.3s ease;
+      }
+
+      .speaker-synopses.is-open {
+        margin-top: 1.5rem;
+        opacity: 1;
+      }
+
+      .speaker-synopsis-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .speaker-synopsis-item {
+        margin: 0;
+        padding: 1.1rem 1.25rem;
+        border: 1px solid #dbdbdb;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(10, 10, 10, 0.06);
+      }
+
+      .speaker-synopsis-item .title {
+        margin-bottom: 0.6rem;
+        line-height: 1.25;
+      }
+
+      .speaker-synopsis-item p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      @media screen and (max-width: 768px) {
+        .speaker-synopsis-toggle .button {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        .speaker-synopsis-item {
+          padding: 1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .speaker-synopsis-toggle .button,
+        .synopsis-chevron,
+        .speaker-synopses {
+          transition: none;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('speaker-synopsis-toggle');
+        const label = document.getElementById('speaker-synopsis-toggle-label');
+        const panel = document.getElementById('speaker-synopses');
+
+        if (!toggle || !label || !panel) return;
+
+        toggle.addEventListener('click', function() {
+          const opening = toggle.getAttribute('aria-expanded') !== 'true';
+          toggle.setAttribute('aria-expanded', String(opening));
+          panel.setAttribute('aria-hidden', String(!opening));
+          label.textContent = opening ? 'Hide Speaker Synopses' : 'Show Speaker Synopses';
+
+          if (opening) {
+            panel.classList.add('is-open');
+            requestAnimationFrame(function() {
+              panel.style.maxHeight = panel.scrollHeight + 'px';
+            });
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            requestAnimationFrame(function() {
+              panel.classList.remove('is-open');
+              panel.style.maxHeight = '0px';
+            });
+          }
+        });
+
+        window.addEventListener('resize', function() {
+          if (toggle.getAttribute('aria-expanded') === 'true') {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+      });
+    </script>
+  </div>
+</section>
 
 <section class="section" id="program">
   <div class="container is-max-desktop">
@@ -439,7 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <tr>
             <td>14:00–14:20</td>
             <td><strong>Cherie Ho</strong> · Rising Star Talk</td>
-            <td>Learning Navigation from World-Scale Street-View Platforms</td>
+            <td>Harnessing Data in the Messy Real World: Organizing Robot Experience and Curating Data at Scale</td>
           </tr>
           <tr>
             <td>14:20–14:40</td>
@@ -453,7 +712,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </tr>
           <tr>
             <td>15:00–15:20</td>
-            <td><strong>Manifold Tech Limited</strong> · Industry Talk</td>
+            <td><strong>Dr. Youming Qin</strong> · Industry Talk</td>
             <td>Industry Talk</td>
           </tr>
           <tr class="is-selected">
@@ -497,6 +756,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 
