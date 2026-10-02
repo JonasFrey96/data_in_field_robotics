@@ -34,6 +34,7 @@
   <div id="navbarMain" class="navbar-menu">
     <div class="navbar-start" style="flex-grow:1;justify-content:center;">
       <a class="navbar-item" href="#home">Home</a>
+      <a class="navbar-item" href="#winners">Winners</a>
       <a class="navbar-item" href="#speakers">Speakers</a>
       <a class="navbar-item" href="#program">Program</a>
       <a class="navbar-item" href="#challenge">Challenge</a>
@@ -46,6 +47,15 @@
     </div>
   </div>
 </nav>
+<style>
+  /* Narrow desktops: tighten link spacing so all items fit on one row */
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
+    #navbarMain .navbar-item {
+      padding-left: 0.45rem;
+      padding-right: 0.45rem;
+    }
+  }
+</style>
 <script>
 // Bulma burger menu toggle
 document.addEventListener('DOMContentLoaded', function () {
@@ -135,8 +145,138 @@ document.addEventListener('DOMContentLoaded', function () {
                 </a>
               </span>
 
-          </div> 
+          </div>
 -->
+
+
+<!-- Award winners -->
+<section class="section" id="winners">
+  <div class="container is-max-desktop">
+
+    <style>
+      #winners .winners-box {
+        background: linear-gradient(135deg, #fdc526 0%, #ffd95a 100%);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 6px 20px rgba(253, 197, 38, 0.35);
+      }
+
+      #winners .winners-box .title {
+        color: #1b2a41;
+      }
+
+      #winners .winners-trophy {
+        margin-right: 0.35em;
+      }
+
+      #winners .winners-intro {
+        color: #1b2a41;
+        margin-bottom: 0.5rem;
+      }
+
+      #winners .winners-group {
+        margin: 1.5rem 0 0.75rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      #winners .winners-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      #winners .winner-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 2px 8px rgba(10, 10, 10, 0.08);
+      }
+
+      #winners .winner-award {
+        margin-bottom: 0.4rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9a6b00;
+      }
+
+      #winners .winner-award .icon {
+        margin-right: 0.25em;
+      }
+
+      #winners .winner-title {
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        line-height: 1.35;
+        color: #363636;
+      }
+
+      #winners .winner-authors {
+        font-size: 0.95em;
+        color: #555;
+      }
+
+      @media screen and (max-width: 768px) {
+        #winners .winners-box {
+          padding: 1.25rem;
+        }
+
+        #winners .winners-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+
+    <div class="winners-box">
+      <h2 class="title is-3 has-text-centered">
+        <span class="icon winners-trophy" aria-hidden="true"><i class="fas fa-trophy"></i></span>Congratulations to Our Winners
+      </h2>
+      <p class="has-text-centered winners-intro">Awards were presented during the closing session on 1 October 2026.</p>
+
+      <h3 class="title winners-group">Workshop Awards</h3>
+      <div class="winners-grid">
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-award"></i></span>Best Student Paper</p>
+          <p class="winner-title">Universal Navigation Interface: Robot-Free Data for Wheeled Robot Navigation</p>
+          <p class="winner-authors"><strong>Sarvesh Prajapati</strong>, Ananya Trivedi, Lorena Maria Genua, Drake Moore, Taskin Padir</p>
+        </article>
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-award"></i></span>Best Student Poster</p>
+          <p class="winner-title">CLPV: Dataset of Controlled Co-Located Lighting and Photometric Variation for Robot Vision</p>
+          <p class="winner-authors"><strong>Shekoufeh Sadeghi</strong>, <strong>Yash Turkar</strong>, Karthik K Dantu</p>
+        </article>
+      </div>
+
+      <h3 class="title winners-group">COMFORT Challenge</h3>
+      <div class="winners-grid">
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-trophy"></i></span>Winner</p>
+          <p class="winner-title">SE(3)-LIVOM: Adaptive Multi-LiDAR-Inertial-Visual Odometry and Mapping</p>
+          <p class="winner-authors"><strong>Gunhee Shin</strong></p>
+        </article>
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-medal"></i></span>Runner-Up</p>
+          <p class="winner-title">BIEVR-LIO: Robust LiDAR-Inertial Odometry through Bump-Image-Enhanced Voxel Maps</p>
+          <p class="winner-authors"><strong>Patrick Pfreundschuh</strong></p>
+        </article>
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-medal"></i></span>3rd Place</p>
+          <p class="winner-title">EllipseLIO: Adaptive LiDAR Inertial Odometry with an Ellipsoid Representation</p>
+          <p class="winner-authors"><strong>Rowan Border</strong></p>
+        </article>
+        <article class="winner-card">
+          <p class="winner-award"><span class="icon" aria-hidden="true"><i class="fas fa-industry"></i></span>Industry Winner</p>
+          <p class="winner-title">SLAMLab: Real-Time LiDAR-Inertial SLAM</p>
+          <p class="winner-authors"><strong>Philipp Glira</strong></p>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- About Workshop -->
@@ -181,16 +321,16 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="columns is-vcentered">
             <div class="column is-narrow">
               <figure class="image is-128x128">
-                <img src="https://www.mcgill.ca/cim/files/cim/styles/wysiwyg_large/public/forbes.png?itok=TPJgYxVG" alt="Prof. James Richard Forbes" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.2">
+                <img src="./static/images/speaker/lukas.png" alt="Prof. Lukas Rosenberger Schmid" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.1">
               </figure>
             </div>
             <div class="column">
-              <h3 class="title is-5"><em>From Data to Poses Underwater</em></h3>
-              <p><strong>Prof. James Richard Forbes</strong></p>
-              <p>McGill University</p>
+              <h3 class="title is-5"><em>Rising Star Talk: Frontiers in Robot Data: Examples from 4D Perception</em></h3>
+              <p><strong>Prof. Lukas Rosenberger Schmid</strong></p>
+              <p>University of Technology Nuremberg</p>
                 <span class="speaker-links">
-                  <a href="https://jrforbes.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
-                  <a href="https://scholar.google.com/citations?user=PVJW68EAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
+                  <a href="https://schmluk.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
+                  <a href="https://scholar.google.com/citations?hl=de&user=r79fGI0AAAAJ&view_op=list_works" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
                     <img src="./static/images/google-scholar.svg" alt="Google Scholar" style="height:2em;width:2em;">
                   </span>
@@ -235,15 +375,21 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="columns is-vcentered">
             <div class="column is-narrow">
               <figure class="image is-128x128">
-                <img src="./static/images/Young_Stuart_headshot.jpg" alt="Dr. Stuart Young" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.15">
+                <img src="./static/images/speaker/forbes.png" alt="Prof. James Richard Forbes" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.2">
               </figure>
             </div>
             <div class="column">
-              <h3 class="title is-5">Autonomous Robotic Missions in Complex Environments: The Future of Unmanned Systems</h3>
-              <p><strong>Dr. Stuart Young</strong></p>
-              <p>Field AI</p>
+              <h3 class="title is-5"><em>From Data to Poses Underwater</em></h3>
+              <p><strong>Prof. James Richard Forbes</strong></p>
+              <p>McGill University</p>
                 <span class="speaker-links">
-                  <a href="https://fieldaifederal.com" class="button is-small is-dark is-rounded mt-2">Webpage</a>
+                  <a href="https://jrforbes.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
+                  <a href="https://scholar.google.com/citations?user=PVJW68EAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
+                  <span class="icon">
+                    <img src="./static/images/google-scholar.svg" alt="Google Scholar" style="height:2em;width:2em;">
+                  </span>
+                  <span>Google Scholar</span>
+                  </a>
                 </span>
             </div>
           </div>
@@ -283,21 +429,15 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="columns is-vcentered">
             <div class="column is-narrow">
               <figure class="image is-128x128">
-                <img src="./static/images/speaker/hutter.jpg" alt="Prof. Marco Hutter" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.2">
+                <img src="./static/images/Young_Stuart_headshot.jpg" alt="Dr. Stuart Young" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.15">
               </figure>
             </div>
             <div class="column">
-              <h3 class="title is-5">Hiking the Alps</h3>
-              <p><strong>Prof. Marco Hutter</strong></p>
-              <p>ETH Zürich / RAI</p>
+              <h3 class="title is-5"><em>Autonomous Robotic Missions in Complex Environments: The Future of Unmanned Systems</em></h3>
+              <p><strong>Dr. Stuart Young</strong></p>
+              <p>Field AI</p>
                 <span class="speaker-links">
-                  <a href="https://rsl.ethz.ch/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
-                  <a href="https://scholar.google.com/citations?user=DO3quJYAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
-                  <span class="icon">
-                    <img src="./static/images/google-scholar.svg" alt="Google Scholar" style="height:2em;width:2em;">
-                  </span>
-                  <span>Google Scholar</span>
-                  </a>
+                  <a href="https://fieldaifederal.com" class="button is-small is-dark is-rounded mt-2">Webpage</a>
                 </span>
             </div>
           </div>
@@ -310,16 +450,16 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="columns is-vcentered">
             <div class="column is-narrow">
               <figure class="image is-128x128">
-                <img src="./static/images/speaker/lukas.png" alt="Prof. Lukas Rosenberger Schmid" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.1">
+                <img src="./static/images/speaker/tobias.jpg" alt="Prof. Tobias Fischer" class="speaker-crop" data-crop-x="50" data-crop-y="50" data-zoom="1.1">
               </figure>
             </div>
             <div class="column">
-              <h3 class="title is-5">Rising Star Talk: Frontiers in Robot Data: Examples from 4D Perception</h3>
-              <p><strong>Prof. Lukas Rosenberger Schmid</strong></p>
-              <p>University of Technology Nuremberg</p>
+              <h3 class="title is-5"><em>Keynote Talk</em></h3>
+              <p><strong>Prof. Tobias Fischer</strong></p>
+              <p>Queensland University of Technology</p>
                 <span class="speaker-links">
-                  <a href="https://schmluk.github.io/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
-                  <a href="https://scholar.google.com/citations?hl=de&user=r79fGI0AAAAJ&view_op=list_works" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
+                  <a href="https://www.tobiasfischer.info/" class="button is-small is-dark is-rounded mt-2">Webpage</a>
+                  <a href="https://scholar.google.com/citations?user=eq46ylAAAAAJ&hl=en" target="_blank" rel="noopener" class="button is-small is-link is-rounded" style="margin-top:0.6em;">
                   <span class="icon">
                     <img src="./static/images/google-scholar.svg" alt="Google Scholar" style="height:2em;width:2em;">
                   </span>
@@ -340,6 +480,11 @@ document.addEventListener('DOMContentLoaded', function () {
       transition: object-position 0.5s, transform 0.5s;
       background: #eee;
       display: block;
+    }
+
+    /* Bulma's `.image img { height: auto }` would otherwise win and leave non-square photos uncropped */
+    .image .speaker-crop {
+      height: 100%;
     }
 
     #speakers > .container > .columns {
@@ -486,11 +631,6 @@ document.addEventListener('DOMContentLoaded', function () {
         </article>
 
         <article class="speaker-synopsis-item">
-          <h3 class="title is-5">16:50–17:10 — Marco Hutter</h3>
-          <p>Marco Hutter is a Full Professor of Robotic Systems in the Department of Mechanical and Process Engineering at ETH Zürich and Director of the Center for Robotics. His research develops intelligent robotic systems for challenging environments, spanning legged locomotion, mobile manipulation, autonomous navigation, control and machine learning. He is also a co-founder of ETH spin-offs including ANYbotics and Gravis Robotics.</p>
-        </article>
-
-        <article class="speaker-synopsis-item">
           <h3 class="title is-5">16:50–17:10 — Tobias Fischer</h3>
           <p>Tobias Fischer is an Associate Professor and ARC Future Fellow at the Queensland University of Technology, and a Chief Investigator in its Centre for Robotics. His research focuses on robot localisation, visual place recognition and underwater perception. His doctoral thesis at Imperial College London received the UK Best PhD in Robotics Award.</p>
         </article>
@@ -614,16 +754,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <section class="section" id="program">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Tentative Program</h2>
+    <h2 class="title is-3 has-text-centered">Program</h2>
     <div class="content has-text-centered">
-      <p><strong>Thursday, October 1, 2026 · 1:30–5:30 PM · Half-Day Workshop</strong><br><span class="is-size-6">Doors open at 1:15 PM for arrival and poster setup.</span></p>
-      <p>The afternoon program combines invited talks, interactive poster presentations, and hands-on robot demonstrations. Times and talk titles are subject to change.</p>
+      <p><strong>Thursday, October 1, 2026 · 1:30–5:30 PM · Half-Day Workshop</strong><br><span class="is-size-6">Doors opened at 1:15 PM for arrival and poster setup.</span></p>
+      <p>The afternoon program combined invited talks, interactive poster presentations, and hands-on robot demonstrations.</p>
     </div>
 
     <style>
+      .program-table td:first-child {
+        white-space: nowrap;
+      }
+
       .program-table tr.program-break td {
         font-size: 0.85em;
         color: #7a7a7a;
+      }
+
+      /* Poster and coffee rows: a light tint instead of Bulma's saturated is-selected teal */
+      #program .program-table tr.program-poster td {
+        background-color: #e6f8f4;
+        color: #363636;
       }
 
       /* Untimed golden row; the id keeps it above Bulma's striping and the phone time-label style */
@@ -715,17 +865,17 @@ document.addEventListener('DOMContentLoaded', function () {
             <td><strong>Dr. Youming Qin</strong> · Industry Talk</td>
             <td>Industry Talk</td>
           </tr>
-          <tr class="is-selected">
+          <tr class="program-poster">
             <td>15:20–15:30</td>
             <td><strong>Poster Session and Robot Interactions</strong></td>
             <td>Interactive research presentations and hands-on demonstrations</td>
           </tr>
-          <tr class="is-selected">
+          <tr class="program-poster">
             <td>15:30–16:00</td>
             <td><strong>Coffee Break, Extended Poster Session, and Robot Interactions</strong></td>
             <td>Official IROS afternoon coffee window; live robotic deployments</td>
           </tr>
-          <tr class="is-selected">
+          <tr class="program-poster">
             <td>16:00–16:30</td>
             <td><strong>Poster Session and Robot Interactions</strong></td>
             <td>Interactive research presentations and hands-on demonstrations</td>
@@ -737,12 +887,12 @@ document.addEventListener('DOMContentLoaded', function () {
           </tr>
           <tr>
             <td>16:50–17:10</td>
-            <td><strong>Marco Hutter</strong> · Keynote Talk</td>
-            <td>Hiking the Alps</td>
+            <td><strong>Tobias Fischer</strong> · Keynote Talk</td>
+            <td>Keynote Talk</td>
           </tr>
           <tr>
             <td>17:10–17:30</td>
-            <td><strong>Best Student Poster, Best Student Presentation, and Challenge Awards</strong></td>
+            <td><strong>Best Student Poster, Best Student Paper, and Challenge Awards</strong></td>
             <td>Awards and closing remarks</td>
           </tr>
           <tr class="program-highlight">
@@ -782,7 +932,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h4 class="title is-5">Awards</h4>
       <p>
         The challenge is evaluated on a <strong>sub-task</strong> basis, and the full prize ladder below is awarded
-        <strong>separately for each sub-task</strong> the total number of sub-tasks (if any) is subject to the variety of submissions.
+        <strong>separately for each sub-task</strong>. The total number of sub-tasks depends on the variety of submissions.
         The organizing committee reserves the right to adjust the prize ladder based on the submissions and the quality of results.
       </p>
       <ul>
@@ -791,10 +941,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><strong>3rd Place:</strong> 200 USD</li>
       </ul>
       <p>
-        <strong>Note:</strong> To claim an award, winners must submit a technical report outlining their approach. Until 21st of September. Details are in the workshop page.
-      </p>
-      <p class="is-size-7">
-        <em>Further details on the submission process, evaluation, and additional constraints will be announced soon.</em>
+        <strong>Note:</strong> To claim an award, winners had to submit a technical report outlining their approach by September 21, 2026.
       </p>
     </div>
   </div>
@@ -879,11 +1026,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="content">
       <ul>
         <li><strong>Submission portal:</strong> <a href="https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/DFR" target="_blank" rel="noopener">DFR Workshop on OpenReview</a></li>
-        <li><strong>Submission opens:</strong> Now!</li>
+        <li><strong>Submissions:</strong> Closed</li>
         <li><strong>Paper deadline:</strong> <s>August 28, 2026</s> <strong class="has-text-danger">September 4, 2026</strong></li>
         <li><strong>Benchmark submission deadline:</strong> September 14, 2026</li>
         <li><strong>Notification to authors:</strong> <s>September 7, 2026</s> <strong class="has-text-danger">September 15, 2026, 23:59 AoE</strong></li>
-        <li><strong>Camera-ready submission:</strong> TBD</li>
         <li><strong>Workshop:</strong> October 1, 2026 (Thursday), 1:30–5:30 PM (half day)</li>
       </ul>
     </div>
@@ -994,13 +1140,13 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 class="title is-3 has-text-centered">Financial Support</h2>
     <div class="content has-text-justified">
       <p>
-        Thanks to the generosity of our sponsors, we are able to offer a limited number of travel grants to help
-        cover the cost of attending IROS 2026 and this workshop. We especially encourage applications from students,
+        Thanks to the generosity of our sponsors, we were able to offer a limited number of travel grants to help
+        cover the cost of attending IROS 2026 and this workshop. We especially encouraged applications from students,
         early-career researchers, and participants from underrepresented groups or institutions with limited travel funding.
       </p>
       <p>
-        To be considered, please fill in the short application form below. Applicants are expected to have a
-        contribution to the workshop (an accepted poster, paper, or challenge submission) and to attend in person.
+        Applicants were expected to have a contribution to the workshop (an accepted poster, paper, or challenge
+        submission) and to attend in person.
       </p>
       <div class="has-text-centered" style="margin: 1.5em 0;">
         <p class="is-size-5 has-text-weight-semibold has-text-danger">The funds have been allocated. <span aria-hidden="true">🎉</span></p>
@@ -1026,6 +1172,9 @@ document.addEventListener('DOMContentLoaded', function () {
       #organizers .organizer-card figure {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        border-radius: 5px;
       }
 
       /* Phones: Bulma columns only become flex from 769px, so center the cards here, two per row */
@@ -1178,7 +1327,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <div class="sponsor-tier">
         <h3 class="title is-5 sponsor-tier-label">Silver Sponsor</h3>
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/ANYbotics_logo.svg" alt="ANYbotics" class="sponsor-img" style="max-height:70px; width:auto; object-fit:contain;">
+        <img src="./static/images/anybotics.svg" alt="ANYbotics" class="sponsor-img" style="max-height:70px; width:auto; object-fit:contain;">
       </div>
       <div class="sponsor-tier">
         <h3 class="title is-5 sponsor-tier-label">Sponsors</h3>

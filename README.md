@@ -18,6 +18,17 @@ The website entrypoint is `index.html`, and all local assets are stored under `s
 
 This project is a static website. There is no build step.
 
+### Recommended: `serve.py`
+
+```bash
+python3 serve.py          # from the website directory
+python3 data_in_field_robotics/serve.py   # or from its parent directory
+```
+
+Then open `http://127.0.0.1:8000/`. It always serves the folder `serve.py` lives in, and unlike
+`python3 -m http.server` it does not print `BrokenPipeError` tracebacks when the browser cancels a
+download (reloads, aborted image requests). Pass a port number to use another port, e.g. `python3 serve.py 8080`.
+
 ### Option 1: Serve from the website directory
 
 ```bash
